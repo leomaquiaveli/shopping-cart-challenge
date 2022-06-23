@@ -8,3 +8,4 @@ Ferramentas Utilizadas
 -  APOLLO
 -  REACT ROUTER
 -  GRAPHCMS
+-  VERCEL
