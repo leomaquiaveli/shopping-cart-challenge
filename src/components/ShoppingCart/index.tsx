@@ -4,6 +4,7 @@ import { Cart, CartProducts, Container, PriceWrap, Purchase, Title, TotalPrice }
 import { gql, useQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
 import { Truffle } from '../../models/truffle';
+import { useNavigate } from "react-router";
 
 const GET_PRODUCTS_QUERY = gql`
     query{
@@ -18,6 +19,7 @@ const GET_PRODUCTS_QUERY = gql`
 `
 
 export function ShoppingCart(){
+    const navigate = useNavigate()
     
     const { data } = useQuery<{ products: Truffle[] }>(GET_PRODUCTS_QUERY)
 
@@ -27,10 +29,6 @@ export function ShoppingCart(){
         let Total: any = data?.products.reduce((a, b) => a + b.price, 0)
         setTotalPriceCount(Total)
     }
-
-    useEffect(()=>{
-        
-      }, [])
 
     return(
         <Container>
@@ -69,7 +67,7 @@ export function ShoppingCart(){
                 </TotalPrice>
                 
                 <Purchase>
-                    <button onClick={priceTotalAction}>Finalizar Compra</button>
+                    <button onClick={() => navigate('/')}>Finalizar Compra</button>
                 </Purchase>
 
             </Cart>

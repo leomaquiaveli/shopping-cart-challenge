@@ -1,15 +1,12 @@
-import { Footer } from "./components/Footer"
-import { Header } from "./components/Header"
-import { ShoppingCart } from "./components/ShoppingCart"
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './routes';
 import "./styles/global.scss"
-function App() {
 
+function App() {
   return (
-    <> 
-      <Header />
-      <ShoppingCart />
-      <Footer />
-    </>
+    <Router>
+      <Routes />
+    </Router>
   )
 }
 

@@ -8,4 +8,6 @@ export const Head = styled.div`
     
     display: flex;
     justify-content: center;
+
+    cursor: pointer;
 `
